@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&family=Karla:wght@400;700;800&display=swap');
+
 :root {
   --text: #6b6375;
   --text-h: #08060d;
@@ -24,6 +26,13 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary-green: #495E57;
+  --primary-yellow: #F4CE14;
+  --secondary-orange: #EE9972;
+  --secondary-peach: #FDBABB;
+  --highlight-light: #EDEFEE;
+  --highlight-dark: #333333;
 
   @media (max-width: 1024px) {
     font-size: 16px;
@@ -76,10 +85,10 @@ h2 {
 h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
+  margin: 32px 0 0 0; /* Top: 32px, Right: 0, Bottom: 0, Left: 0 */
   @media (max-width: 1024px) {
     font-size: 36px;
-    margin: 20px 0;
+    margin: 20px 0 0 0;
   }
 }
 h2 {
@@ -108,4 +117,90 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Titles - Using Markazi Text */
+.display-title {
+  font-family: 'Markazi Text', serif;
+  font-size: clamp(48pt, 8vw, 64pt);
+  font-weight: 500;
+}
+
+.subtitle {
+  font-family: 'Markazi Text', serif;
+  font-size: clamp(32pt, 6vw, 40pt);
+}
+
+/* UI Elements & Body - Using Karla */
+.lead-text {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(14pt, 4vw, 18pt);
+  font-weight: 500;
+}
+
+.section-title {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(14pt, 5vw, 20pt);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.section-body {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(12pt, 4vw, 16pt);
+  font-weight: 800;
+}
+
+.card-title {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(14pt, 4vw, 18pt);
+  font-weight: 700;
+}
+
+.highlight-text {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(12pt, 4vw, 16pt);
+  font-weight: 500;
+}
+
+.regular-paragraph {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(12pt, 4vw, 16pt);
+}
+
+.testimonial {
+  font-family: 'Karla', sans-serif;
+  font-size: clamp(10pt, 3vw, 12pt);
+}
+
+.primary-green {
+  color: var(--primary-green);
+}
+
+.primary-yellow {
+  color: var(--primary-yellow);
+}
+
+.secondary-dark {
+  color: var(--secondary-orange);
+}
+
+.secondary-light {
+  color: var(--secondary-peach);
+}
+
+.dark-highlight {
+  color: var(--highlight-dark);
+}
+
+.light-highlight {
+  color: var(--highlight-light);
+}
+
+.pure-white {
+  color: #fff;
+}
+
+.pure-black {
+  color: #000;
 }

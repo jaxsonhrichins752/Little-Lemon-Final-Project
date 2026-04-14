@@ -1,0 +1,70 @@
+.header {
+  background-color: #FFFFFF; /* White background */
+  height: 80px;              /* Giving a bit more room for tap targets */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;           /* Reduced padding for mobile */
+  width: 100%;
+  box-sizing: border-box;    /* Ensures padding doesn't push the icon off-screen */
+  position: relative;        /* Required for the absolute positioned nav */
+  z-index: 10;               /* Ensures the header stays on top of the hero section */
+}
+
+.hamburger {
+  display: block;            /* Show by default on mobile */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav {
+  display: none;             /* Hide the navigation links by default on mobile */
+  position: absolute;
+  top: 80px;                 /* Drop down right below the header */
+  left: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a nice drop shadow to the menu */
+}
+
+.nav.open {
+  display: block;            /* Class added by React state to show the menu */
+}
+
+.navLinks {
+  display: flex;
+  flex-direction: column;    /* Stack links vertically on mobile */
+  align-items: center;
+  padding: 20px 0;
+  margin: 0;
+  gap: 20px; /* Adjust based on the '522' spacing marker in your Figma */
+  list-style: none;
+}
+
+.navLinks a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* =========================================
+   DESKTOP STYLES (Min-width: 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+  .hamburger {
+    display: none;           /* Hide the hamburger button */
+  }
+
+  .nav {
+    display: block;          /* Always show the nav wrapper */
+    position: static;        /* Remove absolute positioning */
+    width: auto;             /* Let it size naturally */
+    box-shadow: none;        /* Remove the dropdown shadow */
+  }
+
+  .navLinks {
+    flex-direction: row;     /* Put links side-by-side again */
+    padding: 0;
+  }
+}

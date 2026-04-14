@@ -1,0 +1,84 @@
+.heroBackground {
+  background-color: var(--primary-green);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px; /* Center the content like your Figma guides */
+  width: 100%;
+  padding: 0 20px;
+  position: relative;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.heroButton {
+  background-color: var(--primary-yellow);
+  padding: 15px 30px;
+  border-radius: 16px;
+  border: none;
+  width: fit-content;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.heroImageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  aspect-ratio: 7 / 8; /* Maintains the proportion of your original 350x400 image */
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+/* =========================================
+   DESKTOP STYLES (Min-width: 1024px)
+   ========================================= */
+@media (min-width: 1024px) {
+  .heroBackground {
+    height: 400px; /* Restore the fixed height for the overlapping effect */
+    padding: 0;
+  }
+
+  .heroContainer {
+    flex-direction: row; /* Put them side-by-side again */
+    align-items: flex-start;
+    padding: 40px 20px;
+    gap: 0;
+  }
+
+  .heroText {
+    flex: 1;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .heroImageContainer {
+    flex: 1;
+    justify-content: flex-end; /* Applied to the container to push the image right */
+  }
+
+  .heroImage {
+    width: 350px;
+    height: 400px;
+  }
+}
