@@ -6,7 +6,6 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensures all cards in a row are the same height */
   max-width: 100%; /* Mobile first: full width */
 }
 

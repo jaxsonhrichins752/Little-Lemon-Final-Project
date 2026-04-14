@@ -12,7 +12,7 @@ function Hero() {
           <p className="lead-text light-highlight">
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
           </p>
-          <button className={`${styles.heroButton} section-title`}>Reserve a Table</button>
+          <button className={`button button-primary section-title pure-black ${styles.heroButton}`}>Reserve a Table</button>
         </div>
         <div className={styles.heroImageContainer}>
           <img src={heroImage} alt="Delicious Mediterranean food" className={styles.heroImage} />

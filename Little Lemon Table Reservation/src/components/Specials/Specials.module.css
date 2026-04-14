@@ -1,0 +1,50 @@
+.specialsSection {
+  padding: 120px 20px 0px;
+  max-width: 1200px; /* Limits width on ultra-wide screens */
+  margin: 0 auto;
+}
+
+.specialsHeader {
+  display: flex;
+  flex-direction: column; /* Stacked on mobile */
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.menuButton {
+  background-color: var(--primary-yellow);
+  color: var(--dark);
+  padding: 10px 25px;
+  border-radius: 16px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%; /* Full width button for easy tapping on mobile */
+}
+
+.cardsGrid {
+  display: flex;
+  flex-direction: column; /* Single column for mobile */
+  gap: 30px;
+}
+
+/* --- Desktop Layout --- */
+@media (min-width: 1024px) {
+  .specialsHeader {
+    flex-direction: row; /* Side-by-side on desktop */
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .menuButton {
+    width: auto; /* Shrink to fit text on desktop */
+  }
+
+  .cardsGrid {
+    flex-direction: row; /* Horizontal row for cards */
+    justify-content: space-between;
+    align-items: stretch; /* Ensures all cards stay the same height */
+  }
+}

@@ -204,3 +204,28 @@ code {
 .pure-black {
   color: #000;
 }
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+.button {
+  padding: 15px 15px;
+  border-radius: 16px;
+  border: none;
+  width: fit-content;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.1s ease, filter 0.2s ease;
+}
+
+.button:hover {
+  filter: brightness(0.95); /* A simple hover effect that works on any color */
+}
+
+.button-primary {
+  background-color: var(--primary-yellow);
+}
+
+.button-secondary {
+  background-color: var(--primary-green);
+}

@@ -1,5 +1,5 @@
 import styles from './DishCard.module.css';
-import bikeIcon from '../../assets/bike-icon.svg'; // Path to your delivery icon
+import bikeIcon from '../../assets/bikeicon.svg'; // Path to your delivery icon
 
 function DishCard({ image, title, price, description }) {
   return (
