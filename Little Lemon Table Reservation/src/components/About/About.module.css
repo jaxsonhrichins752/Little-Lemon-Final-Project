@@ -1,0 +1,58 @@
+.aboutSection {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column; /* Stacked for mobile */
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content {
+  flex: 1;
+}
+
+.imageContainer {
+  flex: 1;
+  position: relative;
+  height: 400px; /* Gives the container height since children are absolute */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageTop, .imageBottom {
+  width: 80%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* --- Desktop Layout --- */
+@media (min-width: 1024px) {
+  .aboutSection {
+    flex-direction: row; /* Side-by-side */
+    align-items: center;
+    padding: 100px 20px;
+  }
+
+  .imageContainer {
+    height: 500px;
+  }
+
+  .imageTop {
+    position: absolute;
+    width: 270px;
+    height: 330px;
+    right: 0;
+    top: 0;
+    z-index: 2;
+  }
+
+  .imageBottom {
+    position: absolute;
+    width: 270px;
+    height: 330px;
+    left: 0;
+    bottom: 0;
+    z-index: 1; /* Keeps this image on top of the other */
+  }
+}

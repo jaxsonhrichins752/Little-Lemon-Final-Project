@@ -1,0 +1,90 @@
+.footer {
+  background-color: var(--primary-green); /* Matches your Figma palette */
+  width: 100%;
+}
+
+.container {
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column; /* Stacked for mobile */
+  align-items: center;
+  gap: 40px;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.logo {
+  max-width: 100px; /* Small footer logo */
+  height: auto;
+}
+
+/* --- LINK STYLING --- */
+.footer a {
+  color: #EDEFEE; /* Assuming you want an off-white/light color against the green */
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--primary-yellow); /* A nice hover effect using your brand yellow */
+}
+
+/* --- THE Content GRID (Mobile-First) --- */
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column stack for small phones */
+  gap: 30px;
+  width: 100%;
+  text-align: center; /* Center text on mobile */
+}
+
+.gridColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* --- THE RESPONSIVE MAGIC --- */
+
+/* Tablet & Up - 2 Column Grid for Content */
+@media (min-width: 600px) {
+  .contentGrid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for a clean tablet look */
+    text-align: left; /* Left align text */
+  }
+}
+
+/* Desktop & Up - Single Row Footer with 3 Column Content */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row; /* Sideways row for the overall structure */
+    justify-content: center;
+    align-items: flex-start; /* Align lists to the top */
+    gap: 80px; /* Large space between logo and grid */
+    padding: 80px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logoContainer {
+    width: auto; /* Shrink to fit logo */
+    align-self: center; /* Vertically centers the logo within the footer */
+  }
+
+  .contentGrid {
+    grid-template-columns: repeat(3, 1fr); /* 3 column grid for the lists */
+    flex: 1; /* Take up remaining space */
+  }
+}
