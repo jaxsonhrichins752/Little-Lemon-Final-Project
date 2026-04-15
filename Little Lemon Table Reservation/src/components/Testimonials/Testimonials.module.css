@@ -1,0 +1,28 @@
+.section {
+  background-color: var(--primary-green); /* Matches your Figma background */
+  padding: 60px 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column; /* Stacked for mobile */
+  gap: 20px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Desktop Layout */
+@media (min-width: 1024px) {
+  .grid {
+    flex-direction: row; /* 4 cards in a row */
+    justify-content: center;
+    align-items: stretch; /* Makes all cards the same height */
+  }
+}

@@ -1,0 +1,40 @@
+.card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+}
+
+.star {
+  width: 30px;
+  height: 30px;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.userPhoto {
+  width: 75px;
+  height: 75px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Desktop Adjustment */
+@media (min-width: 1024px) {
+  .card {
+    width: 200px; /* Constrain width to fit 4 across */
+    height: 300px; /* Make them all equal height in the grid */
+  }
+}
