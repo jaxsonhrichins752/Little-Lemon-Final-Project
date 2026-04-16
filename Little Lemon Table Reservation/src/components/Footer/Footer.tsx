@@ -1,5 +1,7 @@
 import styles from './Footer.module.css';
-import logo from '../../assets/footer-logo.png'; // Assuming you have a standard footer logo
+import logo from '../../assets/footer-logo.png';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
   return (
@@ -14,10 +16,10 @@ function Footer() {
           <h4 className="card-title primary-yellow">Navigation</h4>
           <nav>
             <ul className={styles.linkList}>
-              <li><a href="#home" className="paragraph-text pure-white">Home</a></li>
-              <li><a href="#about" className="paragraph-text pure-white">About</a></li>
-              <li><a href="/menu" className="paragraph-text pure-white">Menu</a></li>
-              <li><a href="/reservations" className="paragraph-text pure-white">Reservations</a></li>
+              <li><HashLink smooth to="/#home" className="paragraph-text pure-white">Home</HashLink></li>
+              <li><HashLink smooth to="/#about" className="paragraph-text pure-white">About</HashLink></li>
+              <li><HashLink smooth to="/#menu" className="paragraph-text pure-white">Menu</HashLink></li>
+              <li><Link to="/reservations" className="paragraph-text pure-white">Reservations</Link></li>
             </ul>
           </nav>
         </div>

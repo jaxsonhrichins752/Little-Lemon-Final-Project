@@ -29,7 +29,7 @@ function Header() {
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
             <ul className={`section-body ${styles.navLinks}`}>
                 <li>
-                    <HashLink smooth to="/#home" onClick={() => setIsMenuOpen(false)}>
+                    <HashLink smooth to="/" onClick={() => setIsMenuOpen(false)}>
                     Home
                     </HashLink>
                 </li>
