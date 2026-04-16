@@ -1,0 +1,30 @@
+.reservationsPage {
+    margin: 15px 0px;
+}
+
+.banner {
+    /* Flexbox ensures content is centered for the mobile persona's quick glance */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-green);
+    padding: 0 20px;
+    min-height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.banner h1 {
+    margin: 0;
+    text-align: center;
+}
+
+/* DESKTOP (Large Screens) */
+@media (min-width: 769px) {
+    .banner {
+        justify-content: center;
+        padding: 0 10%;
+        min-height: 140px;
+    }
+
+}

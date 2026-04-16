@@ -5,6 +5,8 @@ import Footer from './components/Footer/Footer'
 import Specials from './components/Specials/Specials'
 import Testimonials from './components/Testimonials/Testimonials'
 import About from './components/About/About'
+import Reservations from './components/Reservations/Reservations'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
 
@@ -12,10 +14,17 @@ function App() {
     <>
     <Header />
     <main>
-      <Hero />
-      <Specials />
-      <Testimonials />
-      <About />
+      <Routes>
+        <Route path="/" element={
+            <>
+              <Hero />
+              <Specials />
+              <Testimonials />
+              <About />
+            </>
+          } />
+        <Route path="/reservations" element={<Reservations />} />
+      </Routes>
     </main>
     <Footer />
     </>

@@ -1,5 +1,6 @@
 import styles from './Hero.module.css'
 import heroImage from '../../assets/heroImage.svg'
+import { Link } from 'react-router-dom'
 
 function Hero() {
 
@@ -12,7 +13,9 @@ function Hero() {
           <p className="lead-text light-highlight">
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
           </p>
-          <button className={`button button-primary section-title pure-black ${styles.heroButton}`}>Reserve a Table</button>
+          <Link to="/reservations">
+            <button className={`button button-primary section-title pure-black ${styles.heroButton}`}>Reserve a Table</button>
+          </Link>
         </div>
         <div className={styles.heroImageContainer}>
           <img src={heroImage} alt="Delicious Mediterranean food" className={styles.heroImage} />

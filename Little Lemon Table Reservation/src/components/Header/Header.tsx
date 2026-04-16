@@ -2,6 +2,7 @@ import { useState } from 'react'
 import logo from '../../assets/Logo.svg'
 import styles from './Header.module.css'
 import {HashLink} from 'react-router-hash-link'
+import { Link } from 'react-router-dom';
 
 
 function Header() {
@@ -14,8 +15,9 @@ function Header() {
     return (
     <>
     <header className={styles.header}>
-        <img src={logo} alt="Little Lemon Logo" />
-        
+        <Link to="/" onClick={() => setIsMenuOpen(false)}>
+            <img src={logo} alt="Little Lemon Logo" />
+        </Link>
         <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle menu">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3 12H21" stroke="#333333" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -42,9 +44,9 @@ function Header() {
                     </HashLink>
                 </li>
                 <li>
-                    <HashLink smooth to="/#reservations" onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/reservations" onClick={() => setIsMenuOpen(false)}>
                     Reservations
-                    </HashLink>
+                    </Link>
                 </li>
                 <li>
                     <HashLink smooth to="/#order-online" onClick={() => setIsMenuOpen(false)}>
