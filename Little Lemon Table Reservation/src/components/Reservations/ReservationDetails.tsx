@@ -14,13 +14,41 @@ function ReservationDetails() {
 
   const sizes = [1, 2, 3, 4, 5, 6, 7, 8];
 
+  // This function returns the MUI styling object based on whether a value is selected
+  const pickerStyle = (isSelected: boolean) => ({
+    width: '200px',
+    '& .MuiInputBase-root': {
+      height: '45px',
+      borderRadius: '50px',
+      backgroundColor: isSelected ? 'var(--primary-green)' : 'var(--primary-yellow)',
+      transition: 'all 0.2s ease',
+      cursor: 'pointer',
+      paddingRight: '10px',
+    },
+    '& .MuiOutlinedInput-notchedOutline': {
+      border: 'none',
+    },
+    '& input': {
+      textAlign: 'center',
+      fontWeight: 700,
+      fontSize: '0.9rem',
+      fontFamily: 'inherit',
+      backgroundColor: 'transparent !important', // Removes the white box
+      boxShadow: 'none !important', // Removes any internal shadows
+      // This forces the color of the text/placeholder
+      WebkitTextFillColor: isSelected ? 'var(--primary-yellow)' : 'var(--primary-green)',
+    },
+    '& .MuiSvgIcon-root': {
+      fill: isSelected ? 'var(--primary-green)' : 'var(--primary-yellow)',
+    }
+  });
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
       <div className={styles.container}>
         
-        {/* Date and Time Row */}
         <div className={styles.pickerRow}>
-          
+          {/* Reservation Date */}
           <div className={styles.fieldGroup}>
             <label className={styles.label}>RESERVATION DATE</label>
             <DatePicker
@@ -28,15 +56,14 @@ function ReservationDetails() {
               onChange={(newValue) => setDate(newValue)}
               slotProps={{
                 textField: {
-                  label: undefined,
-                  fullWidth: false,
-                  className: date ? styles.activePill : styles.pillButton,
+                  sx: pickerStyle(!!date),
                   placeholder: "Select Date"
                 }
               }}
             />
           </div>
 
+          {/* Select Time */}
           <div className={styles.fieldGroup}>
             <label className={styles.label}>SELECT TIME</label>
             <TimePicker
@@ -48,9 +75,7 @@ function ReservationDetails() {
               }}
               slotProps={{
                 textField: {
-                  label: undefined,
-                  fullWidth: false,
-                  className: time ? styles.activePill : styles.pillButton,
+                  sx: pickerStyle(!!time),
                   placeholder: "Select Time"
                 }
               }}
@@ -58,7 +83,7 @@ function ReservationDetails() {
           </div>
         </div>
 
-        {/* Party Size Section */}
+        {/* Party Size */}
         <div className={styles.fieldGroup}>
           <label className={styles.label}>PARTY SIZE (INCLUDING CHILDREN)</label>
           <div className={styles.numberRow}>

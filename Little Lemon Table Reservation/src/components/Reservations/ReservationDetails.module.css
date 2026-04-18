@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: column;
   gap: 30px;
+  align-items: center;
+  justify-content: center;
 }
 
 .pickerRow {
@@ -22,47 +24,6 @@
   font-size: 0.85rem;
   color: var(--primary-green);
   letter-spacing: 1px;
-}
-
-/* --- MUI "Pill" Styling Override --- */
-
-/* Standard Sizing for both states */
-.pillButton :global(.MuiInputBase-root),
-.activePill :global(.MuiInputBase-root) {
-  height: 45px;
-  width: 180px;
-  border-radius: 16px;
-  font-weight: 700;
-  font-family: var(--font-body);
-  border: none;
-  cursor: pointer;
-}
-
-/* Yellow State (Default) */
-.pillButton :global(.MuiInputBase-root) {
-    background-color: var(--primary-green) !important;
-    color: var(--primary-yellow) !important;
-}
-
-/* Green State (Selected) */
-.activePill :global(.MuiInputBase-root) {
-  background-color: var(--primary-yellow) !important;
-  color: var(--primary-green) !important;
-}
-
-/* Ensure Icons match the text color */
-.pillButton :global(.MuiSvgIcon-root) {
-  fill: var(--primary-yellow);
-}
-
-.activePill :global(.MuiSvgIcon-root) {
-  fill: var(--primary-green);
-}
-
-/* Remove default MUI border outlines */
-.pillButton :global(.MuiOutlinedInput-notchedOutline),
-.activePill :global(.MuiOutlinedInput-notchedOutline) {
-  border: none !important;
 }
 
 /* --- Party Size Buttons --- */
@@ -100,5 +61,6 @@
 @media (min-width: 1024px) {
   .pickerRow {
     flex-direction: row;
+    gap: 40px;
   }
 }
