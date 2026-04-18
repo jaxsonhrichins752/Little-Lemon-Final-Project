@@ -1,0 +1,33 @@
+.formInput {
+    width: 100%;
+    background-color: var(--highlight-light);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+
+.formLabel {
+    display: block;
+    text-align: left;
+    margin-left: 25px;
+}
+
+.submitSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.signInPrompt {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+:global(.button).signInButton {
+    padding: 5px 20px;
+}

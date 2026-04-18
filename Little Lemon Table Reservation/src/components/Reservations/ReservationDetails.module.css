@@ -1,0 +1,104 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.pickerRow {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.label {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--primary-green);
+  letter-spacing: 1px;
+}
+
+/* --- MUI "Pill" Styling Override --- */
+
+/* Standard Sizing for both states */
+.pillButton :global(.MuiInputBase-root),
+.activePill :global(.MuiInputBase-root) {
+  height: 45px;
+  width: 180px;
+  border-radius: 16px;
+  font-weight: 700;
+  font-family: var(--font-body);
+  border: none;
+  cursor: pointer;
+}
+
+/* Yellow State (Default) */
+.pillButton :global(.MuiInputBase-root) {
+    background-color: var(--primary-green) !important;
+    color: var(--primary-yellow) !important;
+}
+
+/* Green State (Selected) */
+.activePill :global(.MuiInputBase-root) {
+  background-color: var(--primary-yellow) !important;
+  color: var(--primary-green) !important;
+}
+
+/* Ensure Icons match the text color */
+.pillButton :global(.MuiSvgIcon-root) {
+  fill: var(--primary-yellow);
+}
+
+.activePill :global(.MuiSvgIcon-root) {
+  fill: var(--primary-green);
+}
+
+/* Remove default MUI border outlines */
+.pillButton :global(.MuiOutlinedInput-notchedOutline),
+.activePill :global(.MuiOutlinedInput-notchedOutline) {
+  border: none !important;
+}
+
+/* --- Party Size Buttons --- */
+.numberRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.circleButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--primary-yellow);
+  color: var(--primary-green);
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.activeCircle {
+  background-color: var(--primary-green);
+  color: var(--primary-yellow);
+}
+
+.disclaimer {
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Desktop Adjustment */
+@media (min-width: 1024px) {
+  .pickerRow {
+    flex-direction: row;
+  }
+}
