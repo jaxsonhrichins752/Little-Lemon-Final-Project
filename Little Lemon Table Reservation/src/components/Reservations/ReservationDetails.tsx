@@ -99,7 +99,7 @@ function ReservationDetails() {
             ))}
           </div>
           <p className={styles.disclaimer}>
-            FOR GROUPS BIGGER THAN 8 PLEASE CALL AHEAD AT 555 555 5555
+            FOR GROUPS BIGGER THAN 8 PLEASE CALL AHEAD AT 555 123 4567
           </p>
         </div>
         

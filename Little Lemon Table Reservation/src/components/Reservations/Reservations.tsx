@@ -14,7 +14,7 @@ function Reservations() {
             <h1 className='display-text primary-yellow'>Reservations</h1>
         </section>
         <section className={styles.reservationDetailsSection}>
-            <ReservationDate />
+            <ReservationDetails />
         </section>
         <section className={styles.seatingSelector}>
             <h3 className='section-title pure-black'>Select Seating Preference</h3>
