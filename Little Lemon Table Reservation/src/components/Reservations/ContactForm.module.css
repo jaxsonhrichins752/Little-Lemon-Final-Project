@@ -1,10 +1,23 @@
+.formHeading {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 35px 0px 0px;
+}
+
 .formInput {
     width: 100%;
+    max-width: 700px;
     background-color: var(--highlight-light);
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 16px;
     box-sizing: border-box;
+    margin-left: 25px;
 }
 
 .formLabel {

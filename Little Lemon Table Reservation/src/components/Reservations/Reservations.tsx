@@ -1,7 +1,7 @@
 import styles from './Reservations.module.css';
 import ReservationDetails from './ReservationDetails';
 import ContactForm from './ContactForm';
-import ReservationDate from './DateTimePicker';
+import SeatingSelector from './SeatingSelector';
 
 
 function Reservations() {
@@ -16,8 +16,8 @@ function Reservations() {
         <section className={styles.reservationDetailsSection}>
             <ReservationDetails />
         </section>
-        <section className={styles.seatingSelector}>
-            <h3 className='section-title pure-black'>Select Seating Preference</h3>
+        <section className={styles.seatingSelectorSection}>
+            <SeatingSelector />
         </section>
         <section className={styles.contactFormSection}>
             <ContactForm />

@@ -1,0 +1,54 @@
+.seatingOptions {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    border: none;
+    text-align: left; /* Overrides the global text-align: center from index.css */
+}
+
+.seatingLegend {
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-self: flex-start;
+    gap: 10px;
+}
+
+.occasionGroup {
+    display: flex;
+    justify-content: flex-start; /* Forces the label and dropdown to the left */
+    align-items: center;
+    gap: 10px; /* Adds space between the label and the dropdown */
+    font-size: 1.2rem;
+}
+
+.occasionGroup select {
+    background-color: var(--highlight-light);
+    padding: 5px;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+/* Make the wrapper a flex column so the checkboxes stack */
+.checkboxGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; /* Forces both labels to perfectly align to the left edge */
+    align-self: flex-start; /* Moves the entire group of checkboxes to the left edge of the container */
+}
+
+/* Combine the ID rules into the class you are already using in your TSX file */
+.checkboxLabel {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px; /* Creates a clean, even space between the square and the text */
+    cursor: pointer; /* Changes the mouse to a pointer so users know they can click the text */
+    font-size: 1.2rem;
+}

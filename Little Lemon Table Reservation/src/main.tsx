@@ -6,7 +6,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from '@mui/material/styles';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import theme from './theme.ts';
+import theme from './Theme.ts';
 
 
 

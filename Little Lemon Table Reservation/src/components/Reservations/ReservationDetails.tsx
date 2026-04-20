@@ -4,7 +4,7 @@ import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
 import { renderTimeViewClock } from '@mui/x-date-pickers/timeViewRenderers';
-import dayjs, { Dayjs } from 'dayjs';
+import { Dayjs } from 'dayjs';
 import styles from './ReservationDetails.module.css';
 
 function ReservationDetails() {
@@ -50,14 +50,13 @@ function ReservationDetails() {
         <div className={styles.pickerRow}>
           {/* Reservation Date */}
           <div className={styles.fieldGroup}>
-            <label className={styles.label}>RESERVATION DATE</label>
+            <label className={`${styles.label} section-title`}>RESERVATION DATE</label>
             <DatePicker
               value={date}
               onChange={(newValue) => setDate(newValue)}
               slotProps={{
                 textField: {
                   sx: pickerStyle(!!date),
-                  placeholder: "Select Date"
                 }
               }}
             />
@@ -65,7 +64,7 @@ function ReservationDetails() {
 
           {/* Select Time */}
           <div className={styles.fieldGroup}>
-            <label className={styles.label}>SELECT TIME</label>
+            <label className={`${styles.label} section-title`}>SELECT TIME</label>
             <TimePicker
               value={time}
               onChange={(newValue) => setTime(newValue)}
@@ -76,7 +75,6 @@ function ReservationDetails() {
               slotProps={{
                 textField: {
                   sx: pickerStyle(!!time),
-                  placeholder: "Select Time"
                 }
               }}
             />
@@ -85,7 +83,7 @@ function ReservationDetails() {
 
         {/* Party Size */}
         <div className={styles.fieldGroup}>
-          <label className={styles.label}>PARTY SIZE (INCLUDING CHILDREN)</label>
+          <label className={`${styles.label} section-title`}>PARTY SIZE (INCLUDING CHILDREN)</label>
           <div className={styles.numberRow}>
             {sizes.map((num) => (
               <button

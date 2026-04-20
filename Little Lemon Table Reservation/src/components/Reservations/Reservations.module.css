@@ -22,7 +22,25 @@
     text-align: center;
 }
 
+.reservationDetailsSection {
+    grid-row: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 40px;
+}
 
+.seatingSelectorSection {
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 40px;
+}
 
 /* DESKTOP (Large Screens) */
 @media (min-width: 769px) {

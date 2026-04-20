@@ -33,7 +33,7 @@ function ContactForm() {
 
       return (
         <section className={styles.contactForm}>
-            <h3 className='section-title pure-black'>Contact Info</h3>
+            <h3 className={`${styles.formHeading} section-title pure-black`}>Contact Info</h3>
             <form className={styles.form} onSubmit={handleSubmit}>
                 <div className={styles.formGroup}>
                     <label htmlFor="firstName" className={`${styles.formLabel} pure-black`}>First Name</label>
@@ -84,7 +84,7 @@ function ContactForm() {
                 </div>
                 <section className={styles.submitSection}>
                     <div className={styles.signInPrompt}>
-                        <p className='pure-black section-body'>Already have a account?</p>
+                        <p className={`${styles.signInPromptText} pure-black section-body`}>Already have a account?</p>
                         <a href="#" className={`button button-primary pure-black section-body ${styles.signInButton}`}>Sign in</a>
                     </div>
                     <div className={styles.reserveButton}>

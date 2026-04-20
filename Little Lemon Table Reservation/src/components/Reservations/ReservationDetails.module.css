@@ -20,8 +20,7 @@
 }
 
 .label {
-  font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--primary-green);
   letter-spacing: 1px;
 }
@@ -35,8 +34,8 @@
 }
 
 .circleButton {
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   background-color: var(--primary-yellow);
   color: var(--primary-green);
@@ -62,5 +61,11 @@
   .pickerRow {
     flex-direction: row;
     gap: 40px;
+  }
+
+  .circleButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
   }
 }
