@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 import './App.css'
 import Header from './components/Header/Header'
 import Hero from './components/Hero/Hero'
@@ -16,15 +16,17 @@ const fetchTimesForDate = (date: string) => {
     return ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
 };
 
-function App() {
-  const [availableTimes, setAvailableTimes] = useState(fetchTimesForDate(new Date().toISOString().slice(0, 10)));
-
-  const dispatch = (action: { type: string; payload: any }) => {
+const updateTimes = (state: string[], action: { type: string; payload: any }) => {
     if (action.type === 'UPDATE_TIMES') {
-        const newTimes = fetchTimesForDate(action.payload);
-        setAvailableTimes(newTimes);
+        return fetchTimesForDate(action.payload);
     }
-  };
+    return state;
+};
+
+const initializeTimes = () => fetchTimesForDate(new Date().toISOString().slice(0, 10));
+
+function App() {
+  const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
 
   return (
     <>

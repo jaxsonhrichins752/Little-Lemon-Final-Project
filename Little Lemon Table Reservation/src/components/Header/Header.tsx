@@ -29,9 +29,9 @@ function Header() {
         <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
             <ul className={`section-body ${styles.navLinks}`}>
                 <li>
-                    <HashLink smooth to="/" onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/" onClick={() => setIsMenuOpen(false)}>
                     Home
-                    </HashLink>
+                    </Link>
                 </li>
                 <li>
                     <HashLink smooth to="/#about" onClick={() => setIsMenuOpen(false)}>
