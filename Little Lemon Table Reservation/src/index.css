@@ -122,55 +122,55 @@ code {
 /* Titles - Using Markazi Text */
 .display-title {
   font-family: 'Markazi Text', serif;
-  font-size: clamp(48pt, 8vw, 64pt);
+  font-size: clamp(3rem, 8vw, 4rem);
   font-weight: 500;
 }
 
 .subtitle {
   font-family: 'Markazi Text', serif;
-  font-size: clamp(32pt, 6vw, 40pt);
+  font-size: clamp(2rem, 6vw, 2.5rem);
 }
 
 /* UI Elements & Body - Using Karla */
 .lead-text {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(14pt, 4vw, 18pt);
+  font-size: clamp(0.875rem, 4vw, 1.125rem);
   font-weight: 500;
 }
 
 .section-title {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(14pt, 5vw, 20pt);
+  font-size: clamp(0.875rem, 5vw, 1.25rem);
   font-weight: 800;
   text-transform: uppercase;
 }
 
 .section-body {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(12pt, 4vw, 16pt);
+  font-size: clamp(0.75rem, 4vw, 1rem);
   font-weight: 800;
 }
 
 .card-title {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(14pt, 4vw, 18pt);
+  font-size: clamp(0.875rem, 4vw, 1.125rem);
   font-weight: 700;
 }
 
 .highlight-text {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(12pt, 4vw, 16pt);
+  font-size: clamp(0.75rem, 4vw, 1rem);
   font-weight: 500;
 }
 
 .regular-paragraph {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(12pt, 4vw, 16pt);
+  font-size: clamp(0.75rem, 4vw, 1rem);
 }
 
 .testimonial {
   font-family: 'Karla', sans-serif;
-  font-size: clamp(10pt, 3vw, 12pt);
+  font-size: clamp(0.625rem, 3vw, 0.75rem);
 }
 
 .primary-green {

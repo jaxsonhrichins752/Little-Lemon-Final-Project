@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ChangeEvent } from 'react';
 import styles from './SeatingSelector.module.css';
 
 function SeatingSelector() {
@@ -15,7 +15,7 @@ function SeatingSelector() {
         setHighChair((prev) => !prev);
     };
 
-     const handleOccasionChange = (event) => {
+     const handleOccasionChange = (event: ChangeEvent<HTMLSelectElement>) => {
         setOccasion(event.target.value);
     };
 

@@ -6,6 +6,7 @@ import Specials from './components/Specials/Specials'
 import Testimonials from './components/Testimonials/Testimonials'
 import About from './components/About/About'
 import Reservations from './components/Reservations/Reservations'
+import BookingPage from './components/BookingPage/BookingPage'
 import { Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
               <About />
             </>
           } />
-        <Route path="/reservations" element={<Reservations />} />
+        <Route path="/reservations" element={<BookingPage />} />
       </Routes>
     </main>
     <Footer />

@@ -1,5 +1,5 @@
 import styles from './ContactForm.module.css';
-import { useState } from 'react';
+import { useState, type ChangeEvent, type FormEvent } from 'react';
 
 function ContactForm() {
 
@@ -10,7 +10,7 @@ function ContactForm() {
         phoneNumber: ''
       });
     
-        const handleChange = (e) => {
+        const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
           ...prevData,
@@ -24,7 +24,7 @@ function ContactForm() {
         formData.lastName.trim().length > 0 && 
         formData.phoneNumber.trim().length > 0;
     
-      const handleSubmit = (e) => {
+      const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (isFormValid) {
             console.log('Form Submitted:', formData);
