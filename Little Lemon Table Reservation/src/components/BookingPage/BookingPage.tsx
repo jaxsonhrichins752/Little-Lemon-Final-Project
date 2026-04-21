@@ -14,8 +14,10 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
     const [occasion, setOccasion] = useState("");
 
     useEffect(() => {
-        // When the date changes, dispatch an action to update the available times.
-        dispatch({ type: 'UPDATE_TIMES', payload: date });
+        // When a valid date is selected, dispatch an action to update the available times.
+        if (date) {
+            dispatch({ type: 'UPDATE_TIMES', payload: date });
+        }
     }, [date, dispatch]);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
