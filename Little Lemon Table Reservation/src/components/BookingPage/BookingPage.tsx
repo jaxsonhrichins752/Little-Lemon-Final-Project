@@ -1,14 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BookingForm from "./BookingForm";
 import styles from "./BookingPage.module.css";
 
-function BookingPage() {
+interface BookingPageProps {
+    availableTimes: string[];
+    dispatch: (action: { type: string; payload: any }) => void;
+}
+
+function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
     const [date, setDate] = useState("");
     const [guests, setGuests] = useState("1");
-    // This will eventually be fetched from an API based on the selected date
-    const [availableTimes, setAvailableTimes] = useState(['17:00', '18:00', '19:00', '20:00', '21:00', '22:00']);
     const [time, setTime] = useState("");
     const [occasion, setOccasion] = useState("");
+
+    useEffect(() => {
+        // When the date changes, dispatch an action to update the available times.
+        dispatch({ type: 'UPDATE_TIMES', payload: date });
+    }, [date, dispatch]);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
