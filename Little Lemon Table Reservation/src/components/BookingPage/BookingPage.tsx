@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import BookingForm from "./BookingForm";
 import styles from "./BookingPage.module.css";
-import { UpdateTimesAction } from "../../App";
+import type { UpdateTimesAction } from "../../App";
+
+declare const submitAPI: (formData: any) => boolean;
 
 interface BookingPageProps {
     availableTimes: string[];
@@ -16,24 +18,21 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
 
     useEffect(() => {
         if (date) {
-            // TODO: Replace this mock with your actual API call.
-            // Example: fetchAPI(date).then(times => dispatch({ type: 'UPDATE_TIMES', payload: times }))
-            
-            const fetchTimesAsync = async () => {
-                console.log("Fetching times for date:", date);
-                // Simulating an API response
-                const mockTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-                dispatch({ type: 'UPDATE_TIMES', payload: mockTimes });
-            };
-            
-            fetchTimesAsync();
+            dispatch({ type: 'UPDATE_TIMES', payload: date });
         }
     }, [date, dispatch]);
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log("Form submitted from BookingPage with:", { date, time, guests, occasion });
-        // Here you would typically call an API to submit the data
+        const formData = { date, time, guests, occasion };
+        
+        const success = submitAPI(formData);
+        if (success) {
+            console.log("Reservation successfully submitted!");
+            // TODO: Use React Router to navigate to a confirmed page here
+        } else {
+            console.error("Failed to submit reservation.");
+        }
     };
 
     return (

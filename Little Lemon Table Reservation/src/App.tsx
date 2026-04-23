@@ -10,19 +10,24 @@ import Reservations from './components/Reservations/Reservations'
 import BookingPage from './components/BookingPage/BookingPage'
 import { Routes, Route } from 'react-router-dom'
 
+declare const fetchAPI: (date: Date) => string[];
+
 export type UpdateTimesAction = {
     type: 'UPDATE_TIMES';
-    payload: string[];
+    payload: string;
 };
 
 const updateTimes = (state: string[], action: UpdateTimesAction) => {
     if (action.type === 'UPDATE_TIMES') {
-        return action.payload;
+        // Convert the string date payload into a Date object for the API
+        return fetchAPI(new Date(action.payload));
     }
     return state;
 };
 
-const initializeTimes = () => [];
+const initializeTimes = () => {
+    return fetchAPI(new Date());
+};
 
 function App() {
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes);
