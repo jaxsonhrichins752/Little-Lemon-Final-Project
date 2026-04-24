@@ -73,7 +73,7 @@ function BookingForm({
                 </select>
             </fieldset>
             <div className={styles.SubmitButtonSection}>
-                <button className={`${styles.submitButton} section-title pure-black button button-primary`} type="submit" disabled={!isFormValid} aria-label="On Click">Make Your reservation</button>
+                <button className={`${styles.submitButton} section-title pure-black button button-primary`} type="submit" disabled={!isFormValid}>Make Your reservation</button>
             </div>
         </form>
     );
