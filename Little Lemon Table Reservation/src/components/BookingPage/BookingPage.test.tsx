@@ -1,7 +1,8 @@
 /** @vitest-environment jsdom */
 /**
  * Integration-style tests for `BookingPage`: reducer dispatch on date change, filtering
- * booked times from `localStorage`, successful submit (navigate + storage), and duplicate-slot guard.
+ * booked times from `localStorage`, successful submit (navigate + storage), and no duplicate
+ * selection in the UI (booked slots are omitted from the time dropdown).
  */
 import '@testing-library/jest-dom/vitest';
 import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
@@ -103,7 +104,7 @@ describe('BookingPage', () => {
         expect(mockNavigate).toHaveBeenCalledWith('/confirmed');
     });
 
-    test('blocks duplicate booking, shows alert, and does not submit', () => {
+    test('does not offer booked times in the dropdown, so that slot cannot be re-submitted from the UI', () => {
         const dispatch = vi.fn();
         const today = new Date().toISOString().slice(0, 10);
         localStorage.setItem(
@@ -117,12 +118,17 @@ describe('BookingPage', () => {
             </MemoryRouter>
         );
 
-        fireEvent.change(screen.getByLabelText(/Choose time/i), { target: { value: '17:00' } });
-        fireEvent.click(screen.getByRole('button', { name: /Make Your reservation/i }));
+        expect(screen.queryByRole('option', { name: '17:00' })).not.toBeInTheDocument();
+        expect(screen.getByRole('option', { name: '18:00' })).toBeInTheDocument();
 
-        expect(mockAlert).toHaveBeenCalled();
+        const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
+        expect(submitButton).toBeDisabled();
+
+        // No <option value="17:00"> exists; the controlled form keeps time invalid and submit disabled.
+        fireEvent.change(screen.getByLabelText(/Choose time/i), { target: { value: '17:00' } });
+        expect(submitButton).toBeDisabled();
         expect(mockSubmitAPI).not.toHaveBeenCalled();
+        expect(mockAlert).not.toHaveBeenCalled();
         expect(mockNavigate).not.toHaveBeenCalled();
-        expect(dispatch).toHaveBeenCalledWith({ type: 'UPDATE_TIMES', payload: today });
     });
 });
