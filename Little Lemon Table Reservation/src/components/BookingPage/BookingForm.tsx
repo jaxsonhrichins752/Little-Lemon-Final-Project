@@ -18,7 +18,7 @@ function BookingForm({
 }: BookingFormProps) {
     return (
         <form className={styles.bookingForm} onSubmit={handleSubmit}>
-            <section className={styles.DateandTime}>
+            <fieldset className={styles.DateandTime}>
                 <label className="section-title" htmlFor="res-date">Choose date</label>
                 <input className={styles.dateSelector} type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} />
                 <label className="section-title" htmlFor="res-time">Choose time</label>
@@ -28,22 +28,22 @@ function BookingForm({
                         <option key={timeSlot} value={timeSlot}>{timeSlot}</option>
                     ))}
                 </select>
-            </section>
-            <section className={styles.PartySize}>
+            </fieldset>
+            <fieldset className={styles.PartySize}>
                 <label className="section-title" htmlFor="guests">Number of guests</label>
                 <input className={styles.guestsSelector} type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)}></input>
-            </section>
-            <section className={styles.Occasion}>
+            </fieldset>
+            <fieldset className={styles.Occasion}>
                 <label className="section-title" htmlFor="occasion">Occasion</label>
                 <select className={styles.occasionSelector} id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)} required >
                     <option value="" disabled>Select occasion</option>
                     <option>Birthday</option>
                     <option>Anniversary</option>
                 </select>
-            </section>
-            <section className={styles.SubmitButtonSection}>
+            </fieldset>
+            <div className={styles.SubmitButtonSection}>
                 <button className={`${styles.submitButton} section-title pure-black button button-primary`} type="submit">Make Your reservation</button>
-            </section>
+            </div>
         </form>
     );
 };

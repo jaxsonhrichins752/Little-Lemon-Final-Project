@@ -16,7 +16,7 @@ function About() {
         </p>
       </div>
       
-      <div className={styles.imageContainer}>
+      <figure className={styles.imageContainer}>
         <img 
           src={marioandadrian} 
           alt="Mario and Adrian cooking" 
@@ -27,7 +27,7 @@ function About() {
           alt="Chef presenting a dish" 
           className={styles.imageBottom} 
         />
-      </div>
+      </figure>
     </section>
   );
 }

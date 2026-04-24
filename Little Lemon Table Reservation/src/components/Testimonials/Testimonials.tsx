@@ -37,9 +37,9 @@ function Testimonials() {
     <section id="testimonials" className={styles.section}>
       <h2 className={`display-title primary-yellow ${styles.title}`}>Testimonials</h2>
       <div className={styles.grid}>
-        {testimonialsData.map((review, index) => (
+        {testimonialsData.map((review) => (
           <ReviewCard
-            key={index}
+            key={review.name}
             rating={review.rating}
             name={review.name}
             image={review.image}

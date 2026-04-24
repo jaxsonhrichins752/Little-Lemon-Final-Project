@@ -8,6 +8,7 @@ import Testimonials from './components/Testimonials/Testimonials'
 import About from './components/About/About'
 import Reservations from './components/Reservations/Reservations'
 import BookingPage from './components/BookingPage/BookingPage'
+import ConfirmedBooking from './components/BookingPage/ConfirmedBooking'
 import { Routes, Route } from 'react-router-dom'
 
 declare const fetchAPI: (date: Date) => string[];
@@ -46,6 +47,7 @@ function App() {
             </>
           } />
         <Route path="/reservations" element={<BookingPage availableTimes={availableTimes} dispatch={dispatch} />} />
+        <Route path="/confirmed" element={<ConfirmedBooking />} />
       </Routes>
     </main>
     <Footer />

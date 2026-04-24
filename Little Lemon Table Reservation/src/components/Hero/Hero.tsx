@@ -13,8 +13,8 @@ function Hero() {
           <p className="lead-text light-highlight">
             We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
           </p>
-          <Link to="/reservations">
-            <button className={`button button-primary section-title pure-black ${styles.heroButton}`}>Reserve a Table</button>
+          <Link to="/reservations" className={`button button-primary section-title pure-black ${styles.heroButton}`}>
+            Reserve a Table
           </Link>
         </div>
         <div className={styles.heroImageContainer}>

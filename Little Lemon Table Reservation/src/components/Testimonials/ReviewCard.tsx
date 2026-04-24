@@ -14,9 +14,9 @@ function ReviewCard({ rating, image, name, reviewText }: ReviewProps) {
 
   return (
     <article className={styles.card}>
-      <div className={styles.rating}>
+      <div className={styles.rating} aria-label={`${rating} out of 5 stars`}>
         {stars.map((star) => (
-          <img key={star} src={starIcon} alt="star" className={styles.star} />
+          <img key={star} src={starIcon} alt="" className={styles.star} aria-hidden="true" />
         ))}
       </div>
       <div className={styles.userProfile}>

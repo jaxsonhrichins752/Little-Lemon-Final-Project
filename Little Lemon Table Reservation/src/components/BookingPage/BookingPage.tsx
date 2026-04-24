@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import styles from "./BookingPage.module.css";
 import type { UpdateTimesAction } from "../../App";
@@ -15,6 +16,7 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
     const [guests, setGuests] = useState("1");
     const [time, setTime] = useState("");
     const [occasion, setOccasion] = useState("");
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (date) {
@@ -29,7 +31,7 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
         const success = submitAPI(formData);
         if (success) {
             console.log("Reservation successfully submitted!");
-            // TODO: Use React Router to navigate to a confirmed page here
+            navigate("/confirmed");
         } else {
             console.error("Failed to submit reservation.");
         }

@@ -24,7 +24,7 @@
 
 /* --- LINK STYLING --- */
 .footer a {
-  color: #EDEFEE; /* Assuming you want an off-white/light color against the green */
+  /* Assuming you want an off-white/light color against the green */
   text-decoration: none;
 }
 

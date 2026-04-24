@@ -166,6 +166,7 @@ code {
 .regular-paragraph {
   font-family: 'Karla', sans-serif;
   font-size: clamp(0.75rem, 4vw, 1rem);
+  font-style: normal;
 }
 
 .testimonial {

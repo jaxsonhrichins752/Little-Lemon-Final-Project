@@ -40,6 +40,13 @@
     border-radius: 16px;
 }
 
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* Desktop layout for larger screens */
 @media (min-width: 768px) {
     .DateandTime,

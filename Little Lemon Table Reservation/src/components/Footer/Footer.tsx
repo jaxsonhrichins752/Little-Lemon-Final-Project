@@ -14,32 +14,34 @@ function Footer() {
       <div className={styles.contentGrid}>
         <div className={styles.gridColumn}>
           <h4 className="card-title primary-yellow">Navigation</h4>
-          <nav>
+          <nav aria-label='Footer Navigation'>
             <ul className={styles.linkList}>
-              <li><HashLink smooth to="/#home" className="paragraph-text pure-white">Home</HashLink></li>
-              <li><HashLink smooth to="/#about" className="paragraph-text pure-white">About</HashLink></li>
-              <li><HashLink smooth to="/#menu" className="paragraph-text pure-white">Menu</HashLink></li>
-              <li><Link to="/reservations" className="paragraph-text pure-white">Reservations</Link></li>
+              <li><HashLink smooth to="/#home" className="regular-paragraph light-highlight">Home</HashLink></li>
+              <li><HashLink smooth to="/#about" className="regular-paragraph light-highlight">About</HashLink></li>
+              <li><HashLink smooth to="/#menu" className="regular-paragraph light-highlight">Menu</HashLink></li>
+              <li><Link to="/reservations" className="regular-paragraph light-highlight">Reservations</Link></li>
             </ul>
           </nav>
         </div>
 
         <div className={styles.gridColumn}>
           <h4 className="card-title primary-yellow">Contact</h4>
-          <p className="paragraph-text pure-white">
-            123 Main St,<br />
-            Chicago, IL 60601
-          </p>
-          <p className="paragraph-text pure-white">(555) 123-4567</p>
-          <p className="paragraph-text pure-white">info@littlelemon.com</p>
+          <address>
+            <p className="regular-paragraph light-highlight">
+              123 Main St,<br />
+              Chicago, IL 60601
+            </p>
+            <p className="regular-paragraph light-highlight">(555) 123-4567</p>
+            <p className="regular-paragraph light-highlight">info@littlelemon.com</p>
+          </address>
         </div>
 
         <div className={styles.gridColumn}>
           <h4 className="card-title primary-yellow">Social Media</h4>
           <ul className={styles.linkList}>
-            <li><a href="https://facebook.com" className="paragraph-text pure-white">Facebook</a></li>
-            <li><a href="https://instagram.com" className="paragraph-text pure-white">Instagram</a></li>
-            <li><a href="https://twitter.com" className="paragraph-text pure-white">X / Twitter</a></li>
+            <li><a href="https://facebook.com" className="regular-paragraph light-highlight">Facebook</a></li>
+            <li><a href="https://instagram.com" className="regular-paragraph light-highlight">Instagram</a></li>
+            <li><a href="https://twitter.com" className="regular-paragraph light-highlight">X / Twitter</a></li>
           </ul>
         </div>
       </div>

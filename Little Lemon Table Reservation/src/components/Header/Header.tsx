@@ -13,7 +13,6 @@ function Header() {
     }
 
     return (
-    <>
     <header className={styles.header}>
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
             <img src={logo} alt="Little Lemon Logo" />
@@ -26,7 +25,7 @@ function Header() {
             </svg>
         </button>
 
-        <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`}>
+        <nav className={`${styles.nav} ${isMenuOpen ? styles.open : ''}`} aria-label="Main Navigation">
             <ul className={`section-body ${styles.navLinks}`}>
                 <li>
                     <Link to="/" onClick={() => setIsMenuOpen(false)}>
@@ -61,7 +60,6 @@ function Header() {
             </ul>
         </nav>
     </header>
-    </>
   )
 }
 
