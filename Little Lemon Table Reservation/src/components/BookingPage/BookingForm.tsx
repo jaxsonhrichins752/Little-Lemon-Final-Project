@@ -10,17 +10,22 @@ interface BookingFormProps {
     occasion: string;
     setOccasion: (occasion: string) => void;
     availableTimes: string[];
-    handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
+    submitForm: (formData: { date: string; time: string; guests: string; occasion: string }) => void;
 }
 
 function BookingForm({
-    date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, handleSubmit
+    date, setDate, time, setTime, guests, setGuests, occasion, setOccasion, availableTimes, submitForm
 }: BookingFormProps) {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        submitForm({ date, time, guests, occasion });
+    };
+
     return (
         <form className={styles.bookingForm} onSubmit={handleSubmit}>
             <fieldset className={styles.DateandTime}>
                 <label className="section-title" htmlFor="res-date">Choose date</label>
-                <input className={styles.dateSelector} type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} />
+                <input className={styles.dateSelector} type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} required />
                 <label className="section-title" htmlFor="res-time">Choose time</label>
                 <select className={styles.timeSelector} id="res-time" value={time} onChange={(e) => setTime(e.target.value)} required >
                     <option value="" disabled>Select a time</option>
@@ -31,7 +36,7 @@ function BookingForm({
             </fieldset>
             <fieldset className={styles.PartySize}>
                 <label className="section-title" htmlFor="guests">Number of guests</label>
-                <input className={styles.guestsSelector} type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)}></input>
+                <input className={styles.guestsSelector} type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} required />
             </fieldset>
             <fieldset className={styles.Occasion}>
                 <label className="section-title" htmlFor="occasion">Occasion</label>

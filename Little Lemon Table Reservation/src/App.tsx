@@ -6,7 +6,6 @@ import Footer from './components/Footer/Footer'
 import Specials from './components/Specials/Specials'
 import Testimonials from './components/Testimonials/Testimonials'
 import About from './components/About/About'
-import Reservations from './components/Reservations/Reservations'
 import BookingPage from './components/BookingPage/BookingPage'
 import ConfirmedBooking from './components/BookingPage/ConfirmedBooking'
 import { Routes, Route } from 'react-router-dom'
@@ -18,7 +17,7 @@ export type UpdateTimesAction = {
     payload: string;
 };
 
-const updateTimes = (state: string[], action: UpdateTimesAction) => {
+export const updateTimes = (state: string[], action: UpdateTimesAction) => {
     if (action.type === 'UPDATE_TIMES') {
         // Convert the string date payload into a Date object for the API
         return fetchAPI(new Date(action.payload));
@@ -26,7 +25,7 @@ const updateTimes = (state: string[], action: UpdateTimesAction) => {
     return state;
 };
 
-const initializeTimes = () => {
+export const initializeTimes = () => {
     return fetchAPI(new Date());
 };
 
