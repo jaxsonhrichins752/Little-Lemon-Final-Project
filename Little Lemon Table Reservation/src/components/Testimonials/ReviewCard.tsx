@@ -1,3 +1,6 @@
+/**
+ * One testimonial: star rating (repeated icons), avatar, name, and quoted text.
+ */
 import styles from './ReviewCard.module.css';
 import starIcon from '../../assets/starIcon.png'; // Assuming you have a star icon
 

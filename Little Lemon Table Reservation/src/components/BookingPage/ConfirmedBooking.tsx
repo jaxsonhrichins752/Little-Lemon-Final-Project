@@ -1,3 +1,6 @@
+/**
+ * Success screen after a reservation is submitted (`/confirmed`): static confirmation copy.
+ */
 import styles from './ConfirmedBooking.module.css';
 
 function ConfirmedBooking() {

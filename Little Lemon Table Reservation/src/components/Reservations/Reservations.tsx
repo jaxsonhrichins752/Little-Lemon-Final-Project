@@ -1,3 +1,8 @@
+/**
+ * Alternate / composite reservations layout (MUI pickers + seating + contact).
+ * Composes `ReservationDetails`, `SeatingSelector`, and `ContactForm`; not wired
+ * into `App.tsx` routes in the current main flow, but kept as a full-page section.
+ */
 import styles from './Reservations.module.css';
 import ReservationDetails from './ReservationDetails';
 import ContactForm from './ContactForm';

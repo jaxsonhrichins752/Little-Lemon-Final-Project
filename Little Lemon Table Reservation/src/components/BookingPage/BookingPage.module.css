@@ -1,3 +1,4 @@
+/* Layout for the reservations route: banner + form section spacing. */
 .BookingPage {
     display: grid;
     grid-template-rows: repeat(2, auto);

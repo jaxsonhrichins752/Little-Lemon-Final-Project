@@ -1,3 +1,7 @@
+/**
+ * “This week’s specials” grid: static dish data mapped to `DishCard` components.
+ * Section id `specials` is used for hash navigation from the header/footer.
+ */
 import styles from './Specials.module.css';
 import DishCard from './DishCard';
 import bruchetta from '../../assets/bruchetta.png';
@@ -6,8 +10,7 @@ import greekSalad from '../../assets/greekSalad.png';
 import { HashLink } from 'react-router-hash-link';
 
 
-// Import your images here or pass them in the data array
-
+// Dish content and images; swap entries here to change the specials row.
 const specialsData = [
   {
     title: "Greek Salad",

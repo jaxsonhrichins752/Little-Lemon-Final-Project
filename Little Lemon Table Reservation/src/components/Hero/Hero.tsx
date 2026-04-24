@@ -1,3 +1,6 @@
+/**
+ * Home hero: headline, short pitch, primary CTA to `/reservations`, and hero artwork.
+ */
 import styles from './Hero.module.css'
 import heroImage from '../../assets/heroImage.svg'
 import { Link } from 'react-router-dom'

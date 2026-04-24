@@ -1,3 +1,4 @@
+/* Composite reservations page sections (banner, details, seating, contact). */
 .reservationsPage {
     display: grid;
     grid-template-rows: repeat(5, auto);

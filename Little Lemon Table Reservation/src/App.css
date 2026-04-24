@@ -1,3 +1,8 @@
+/*
+ * Legacy / Vite starter layout helpers and hero stacking styles.
+ * Most marketing sections use component-scoped CSS modules; this file still applies
+ * some global layout patterns if referenced from markup.
+ */
 .counter {
   font-size: 16px;
   padding: 5px 10px;

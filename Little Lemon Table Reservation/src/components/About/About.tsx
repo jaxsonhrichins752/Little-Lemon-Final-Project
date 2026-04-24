@@ -1,3 +1,6 @@
+/**
+ * About section on the home page: restaurant story and overlapping chef imagery.
+ */
 import styles from './About.module.css';
 import marioandadrian from '../../assets/MarioandAdrian.png';
 import restaurantChef from '../../assets/restaurantChef.png';

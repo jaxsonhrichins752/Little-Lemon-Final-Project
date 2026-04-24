@@ -1,3 +1,6 @@
+/**
+ * Site footer: repeated navigation, contact block, and social links.
+ */
 import styles from './Footer.module.css';
 import logo from '../../assets/footer-logo.png';
 import { Link } from 'react-router-dom';

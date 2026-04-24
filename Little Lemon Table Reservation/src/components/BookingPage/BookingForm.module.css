@@ -1,3 +1,4 @@
+/* Styles for the `/reservations` booking form: field groups, inputs, errors, submit area. */
 .bookingForm {
     display: flex;
     flex-direction: column;

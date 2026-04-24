@@ -1,3 +1,7 @@
+/**
+ * Guest contact fields for the composite reservations page; enables submit when
+ * first name, last name, and phone are non-empty (email optional for the button state).
+ */
 import styles from './ContactForm.module.css';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
 

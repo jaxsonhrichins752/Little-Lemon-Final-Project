@@ -1,3 +1,4 @@
+/* Seating preferences fieldset: occasion select and checkbox row. */
 .seatingOptions {
     display: flex;
     flex-direction: column;

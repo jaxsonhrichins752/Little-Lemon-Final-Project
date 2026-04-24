@@ -1,3 +1,7 @@
+/**
+ * Site header: logo, responsive nav (hamburger on small screens), and scroll-based hide/show.
+ * Uses `HashLink` for in-page anchors on the home route and `Link` for `/reservations`.
+ */
 import { useState, useEffect, useRef } from 'react'
 import logo from '../../assets/Logo.svg'
 import styles from './Header.module.css'
@@ -14,6 +18,7 @@ function Header() {
         setIsMenuOpen(!isMenuOpen);
     }
 
+    // Collapse header when scrolling down past 50px; show again when scrolling up.
     useEffect(() => {
         const handleScroll = () => {
             const currentScrollY = window.scrollY;

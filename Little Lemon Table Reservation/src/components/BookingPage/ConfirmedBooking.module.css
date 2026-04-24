@@ -1,3 +1,4 @@
+/* Centered confirmation message layout after successful booking. */
 .container {
     display: flex;
     flex-direction: column;

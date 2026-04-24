@@ -1,3 +1,8 @@
+/**
+ * Application entry point: mounts the React tree into `#root`.
+ * Wraps the app in routing, MUI theming, and MUI date-picker localization (Dayjs)
+ * so pickers and themed components work site-wide.
+ */
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'

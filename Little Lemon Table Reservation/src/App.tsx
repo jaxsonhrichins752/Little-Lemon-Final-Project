@@ -1,3 +1,9 @@
+/**
+ * Root application shell: global layout (header/footer), route definitions, and
+ * booking-time state. `availableTimes` is managed with `useReducer`; times come
+ * from the global `fetchAPI` (course/Meta API). BookingPage receives `dispatch`
+ * to refresh slots when the user changes date or completes a reservation.
+ */
 import { useReducer } from 'react'
 import './App.css'
 import Header from './components/Header/Header'
@@ -17,6 +23,7 @@ export type UpdateTimesAction = {
     payload: string;
 };
 
+/** Reducer: replaces state with API times for the requested date string (YYYY-MM-DD). */
 export const updateTimes = (state: string[], action: UpdateTimesAction) => {
     if (action.type === 'UPDATE_TIMES') {
         // Convert the string date payload into a Date object for the API
@@ -25,6 +32,7 @@ export const updateTimes = (state: string[], action: UpdateTimesAction) => {
     return state;
 };
 
+/** Initial state: today’s available slots from `fetchAPI`. */
 export const initializeTimes = () => {
     return fetchAPI(new Date());
 };

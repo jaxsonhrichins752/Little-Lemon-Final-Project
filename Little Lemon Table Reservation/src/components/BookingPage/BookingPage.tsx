@@ -1,3 +1,8 @@
+/**
+ * Table booking route (`/reservations`): owns reservation field state, syncs available
+ * times with the parent reducer via `dispatch`, merges in `localStorage` bookings so
+ * taken slots disappear immediately, and handles submit via global `submitAPI` + persistence.
+ */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import BookingForm from "./BookingForm";

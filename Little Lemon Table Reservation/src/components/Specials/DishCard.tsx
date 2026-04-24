@@ -1,3 +1,6 @@
+/**
+ * Single dish tile: image, title, price, description, and a delivery CTA with bike icon.
+ */
 import styles from './DishCard.module.css';
 import bikeIcon from '../../assets/bikeicon.svg'; // Path to your delivery icon
 

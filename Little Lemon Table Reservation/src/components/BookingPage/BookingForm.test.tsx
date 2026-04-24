@@ -1,4 +1,8 @@
 /** @vitest-environment jsdom */
+/**
+ * Tests for `BookingForm`: labels, validation messages, controlled updates, submit wiring,
+ * and disabled submit states. Uses mocked props instead of the real `BookingPage`.
+ */
 import '@testing-library/jest-dom/vitest';
 import { vi as jest, describe, test, expect, afterEach, beforeEach } from 'vitest';
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';

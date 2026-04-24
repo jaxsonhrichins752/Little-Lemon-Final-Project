@@ -1,3 +1,7 @@
+/**
+ * Accessibility and occasion preferences (wheelchair, high chair, optional occasion)
+ * for the composite reservations page.
+ */
 import { useState, type ChangeEvent } from 'react';
 import styles from './SeatingSelector.module.css';
 

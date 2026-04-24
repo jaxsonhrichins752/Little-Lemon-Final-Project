@@ -1,3 +1,7 @@
+/**
+ * Date, time, and party-size UI using MUI X pickers (Dayjs). Styling is customized via
+ * the `pickerStyle` helper so inputs match the restaurant’s green/yellow palette.
+ */
 import { useState } from 'react';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';

@@ -1,3 +1,9 @@
+/**
+ * Alternate reducer implementation: fetches times via `fetchAPI` and removes slots
+ * already stored in `localStorage` under `Bookings` for the same date.
+ * Note: the running app uses `updateTimes` / `initializeTimes` from `App.tsx` instead;
+ * this module documents the “filter booked times” pattern for reference or future use.
+ */
 declare const fetchAPI: (date: Date) => string[];
 
 export type UpdateTimesAction = {
@@ -5,6 +11,7 @@ export type UpdateTimesAction = {
     payload: string;
 };
 
+/** Loads API times for `dateString`, then subtracts times booked in localStorage. */
 const fetchAndFilterTimes = (dateString: string) => {
     const apiTimes = fetchAPI(new Date(dateString));
     const existingBookings = JSON.parse(localStorage.getItem("Bookings") || "[]");

@@ -1,3 +1,7 @@
+/**
+ * Standalone MUI `DatePicker` example (Dayjs). Exported as `ReservationDate`; filename
+ * is legacy. Wraps the picker in `LocalizationProvider` as required by MUI X.
+ */
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';

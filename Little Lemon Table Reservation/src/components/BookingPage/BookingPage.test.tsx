@@ -1,4 +1,8 @@
 /** @vitest-environment jsdom */
+/**
+ * Integration-style tests for `BookingPage`: reducer dispatch on date change, filtering
+ * booked times from `localStorage`, successful submit (navigate + storage), and duplicate-slot guard.
+ */
 import '@testing-library/jest-dom/vitest';
 import { describe, test, expect, beforeEach, afterEach, vi } from 'vitest';
 import { render, screen, fireEvent, cleanup } from '@testing-library/react';

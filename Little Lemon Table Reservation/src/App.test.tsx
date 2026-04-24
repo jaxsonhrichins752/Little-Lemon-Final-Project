@@ -1,3 +1,7 @@
+/**
+ * Unit tests for `initializeTimes` and `updateTimes` exported from `App.tsx`.
+ * Stubs global `fetchAPI` to match the course API shape without a browser.
+ */
 import { vi as jest, describe, beforeAll, test, expect } from 'vitest';
 import { initializeTimes, updateTimes } from './App';
 

@@ -1,3 +1,8 @@
+/**
+ * Controlled reservation form: date, time (from parent’s `availableTimes`), party size,
+ * optional occasion. Validates on blur and disables submit until required fields are valid.
+ * On submit, calls `submitForm` with the current field snapshot.
+ */
 import { useState } from 'react';
 import styles from './BookingForm.module.css';
 
@@ -28,6 +33,7 @@ function BookingForm({
         setTouched((prevState) => ({ ...prevState, [field]: true }));
     };
 
+    // Party size must parse to 1–10; date and time must be non-empty for a successful submit.
     const isGuestsValid = guests !== "" && parseInt(guests, 10) >= 1 && parseInt(guests, 10) <= 10;
     const isFormValid = date !== "" && time !== "" && isGuestsValid;
 

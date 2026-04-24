@@ -1,3 +1,6 @@
+/**
+ * Customer testimonials section: maps static review data to `ReviewCard` components.
+ */
 import styles from './Testimonials.module.css';
 import ReviewCard from './ReviewCard';
 import Liam from '../../assets/Liam.png';
