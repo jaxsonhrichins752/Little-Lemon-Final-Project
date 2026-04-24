@@ -15,6 +15,12 @@
     gap: 10px;
 }
 
+.guestWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .SubmitButtonSection {
     display: flex;
     justify-content: center;
@@ -38,6 +44,26 @@
 
 .submitButton {
     border-radius: 16px;
+}
+
+.errorMessage {
+    color: red;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.helperText {
+    font-size: 0.85rem;
+    color: #495e57; /* Matches the brand's primary dark green */
+    margin: 0;
+    text-align: center;
+}
+
+.submitButton:disabled {
+    background-color: #e0e0e0;
+    color: #888888;
+    cursor: not-allowed;
+    border: 1px solid #cccccc;
 }
 
 fieldset {

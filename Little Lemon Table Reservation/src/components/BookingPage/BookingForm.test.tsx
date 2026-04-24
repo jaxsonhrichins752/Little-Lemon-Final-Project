@@ -34,4 +34,18 @@ describe('BookingForm', () => {
         fireEvent.click(submitButton);
         expect(mockProps.submitForm).toHaveBeenCalled();
     });
+
+    test('Disables the submit button when date is empty', () => {
+        const invalidProps = { ...mockProps, date: "" };
+        render(<BookingForm {...invalidProps} />);
+        const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
+        expect(submitButton).toBeDisabled();
+    });
+
+    test('Disables the submit button when guests are outside the 1-10 range', () => {
+        const invalidProps = { ...mockProps, guests: "12" };
+        render(<BookingForm {...invalidProps} />);
+        const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
+        expect(submitButton).toBeDisabled();
+    });
 });

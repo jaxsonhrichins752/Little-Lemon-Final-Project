@@ -39,12 +39,9 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
         
     const trulyAvailableTimes = availableTimes.filter(time => !bookedTimes.includes(time));
 
-    // Ensure the selected time is reset if it is no longer available (e.g., from hitting the back button)
-    useEffect(() => {
-        if (time && !trulyAvailableTimes.includes(time)) {
-            setTime("");
-        }
-    }, [trulyAvailableTimes, time]);
+    // Derived state: If the selected time is no longer available, default to an empty string.
+    // This completely avoids using a useEffect to synchronize state and prevents cascading renders!
+    const validatedTime = trulyAvailableTimes.includes(time) ? time : "";
 
     const submitForm = (formData: ReservationData) => {
             // Retrieve existing bookings or initialize an empty array
@@ -84,7 +81,7 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
             <section className={styles.BookingFormSection}>
                 <BookingForm
                     date={date} setDate={setDate}
-                    time={time} setTime={setTime}
+                    time={validatedTime} setTime={setTime}
                     guests={guests} setGuests={setGuests}
                     occasion={occasion} setOccasion={setOccasion}
                     availableTimes={trulyAvailableTimes}
