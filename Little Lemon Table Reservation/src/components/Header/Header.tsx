@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import logo from '../../assets/Logo.svg'
 import styles from './Header.module.css'
 import {HashLink} from 'react-router-hash-link'
@@ -7,13 +7,31 @@ import { Link } from 'react-router-dom';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isVisible, setIsVisible] = useState(true);
+    const lastScrollY = useRef(0);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     }
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            
+            if (currentScrollY > lastScrollY.current && currentScrollY > 50) {
+                setIsVisible(false); // Scrolling down (and past 50px so it doesn't trigger immediately)
+            } else {
+                setIsVisible(true); // Scrolling up
+            }
+            lastScrollY.current = currentScrollY;
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isVisible ? '' : styles.hidden}`}>
         <Link to="/" onClick={() => setIsMenuOpen(false)}>
             <img src={logo} alt="Little Lemon Logo" />
         </Link>

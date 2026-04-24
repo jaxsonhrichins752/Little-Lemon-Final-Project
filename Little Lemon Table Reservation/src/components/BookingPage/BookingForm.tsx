@@ -45,7 +45,7 @@ function BookingForm({
             <fieldset className={styles.DateandTime}>
                 <label className="section-title" htmlFor="res-date">Choose date</label>
                 <input className={styles.dateSelector} type="date" id="res-date" value={date} onChange={(e) => setDate(e.target.value)} onBlur={() => handleBlur("date")} required />
-                {touched.date && !date && <p style={{ color: 'red', fontSize: '0.8rem', margin: '0' }}>Please choose a valid date.</p>}
+                {touched.date && !date && <p className={styles.errorMessage}>Please choose a valid date.</p>}
 
                 <label className="section-title" htmlFor="res-time">Choose time</label>
                 <select className={styles.timeSelector} id="res-time" value={time} onChange={(e) => setTime(e.target.value)} onBlur={() => handleBlur("time")} required >
@@ -54,13 +54,13 @@ function BookingForm({
                         <option key={timeSlot} value={timeSlot}>{timeSlot}</option>
                     ))}
                 </select>
-                {touched.time && !time && <p style={{ color: 'red', fontSize: '0.8rem', margin: '0' }}>Please select a time.</p>}
+                {touched.time && !time && <p className={styles.errorMessage}>Please select a time.</p>}
             </fieldset>
             <div className={styles.guestWrapper}>
                 <fieldset className={styles.PartySize}>
                     <label className="section-title" htmlFor="guests">Number of guests</label>
                     <input className={styles.guestsSelector} type="number" placeholder="1" min="1" max="10" id="guests" value={guests} onChange={(e) => setGuests(e.target.value)} onBlur={() => handleBlur("guests")} required />
-                    {touched.guests && !isGuestsValid && <p style={{ color: 'red', fontSize: '0.8rem', margin: '0' }}>Please enter a number of guests between 1 and 10.</p>}
+                    {touched.guests && !isGuestsValid && <p className={styles.errorMessage}>Please enter a number of guests between 1 and 10.</p>}
                 </fieldset>
                 <p className={styles.helperText}>*For parties larger than 10, please call us at (555) 123-4567.</p>
             </div>

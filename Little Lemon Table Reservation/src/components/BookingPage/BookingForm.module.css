@@ -72,6 +72,12 @@ fieldset {
   padding: 0;
 }
 
+.errorMessage{
+    color: 'red';
+    font-size: '0.8rem';
+    margin: '0'
+}
+
 
 /* Desktop layout for larger screens */
 @media (min-width: 768px) {
