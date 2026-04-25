@@ -11,6 +11,16 @@ import BookingForm from './BookingForm';
     // Define mockProps outside beforeEach to avoid re-declaring it.
     // We'll reset function mocks in beforeEach.
     const mockProps = {
+        firstName: "Jane",
+        setFirstName: jest.fn(),
+        lastName: "Doe",
+        setLastName: jest.fn(),
+        phone: "5551234567",
+        setPhone: jest.fn(),
+        email: "",
+        setEmail: jest.fn(),
+        specialRequests: "",
+        setSpecialRequests: jest.fn(),
         date: "2026-04-24",
         setDate: jest.fn(),
         time: "17:00",
@@ -31,6 +41,11 @@ describe('BookingForm', () => {
     beforeEach(() => {
         // Reset mocks before each test to ensure isolation
         mockProps.setDate.mockReset();
+        mockProps.setFirstName.mockReset();
+        mockProps.setLastName.mockReset();
+        mockProps.setPhone.mockReset();
+        mockProps.setEmail.mockReset();
+        mockProps.setSpecialRequests.mockReset();
         mockProps.setTime.mockReset();
         mockProps.setGuests.mockReset();
         mockProps.setOccasion.mockReset();
@@ -52,6 +67,27 @@ describe('BookingForm', () => {
 
     test('Disables the submit button when date is empty', () => {
         const invalidProps = { ...mockProps, date: "" };
+        render(<BookingForm {...invalidProps} />);
+        const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
+        expect(submitButton).toBeDisabled();
+    });
+
+    test('Disables the submit button when first name is empty', () => {
+        const invalidProps = { ...mockProps, firstName: "" };
+        render(<BookingForm {...invalidProps} />);
+        const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
+        expect(submitButton).toBeDisabled();
+    });
+
+    test('Disables the submit button when last name is empty', () => {
+        const invalidProps = { ...mockProps, lastName: "" };
+        render(<BookingForm {...invalidProps} />);
+        const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
+        expect(submitButton).toBeDisabled();
+    });
+
+    test('Disables the submit button when phone number is empty', () => {
+        const invalidProps = { ...mockProps, phone: "" };
         render(<BookingForm {...invalidProps} />);
         const submitButton = screen.getByRole('button', { name: /Make Your reservation/i });
         expect(submitButton).toBeDisabled();
@@ -92,6 +128,27 @@ describe('BookingForm', () => {
         const dateInput = screen.getByLabelText(/Choose date/i);
         fireEvent.change(dateInput, { target: { value: '2026-05-01' } });
         expect(mockProps.setDate).toHaveBeenCalledWith('2026-05-01');
+    });
+
+    test('Calls setFirstName on first name input change', () => {
+        render(<BookingForm {...mockProps} />);
+        const nameInput = screen.getByLabelText(/First name/i);
+        fireEvent.change(nameInput, { target: { value: 'John Smith' } });
+        expect(mockProps.setFirstName).toHaveBeenCalledWith('John Smith');
+    });
+
+    test('Calls setEmail on email input change', () => {
+        render(<BookingForm {...mockProps} />);
+        const emailInput = screen.getByLabelText(/Email/i);
+        fireEvent.change(emailInput, { target: { value: 'jane@example.com' } });
+        expect(mockProps.setEmail).toHaveBeenCalledWith('jane@example.com');
+    });
+
+    test('Calls setSpecialRequests on textarea change', () => {
+        render(<BookingForm {...mockProps} />);
+        const specialRequestsInput = screen.getByLabelText(/Special requests/i);
+        fireEvent.change(specialRequestsInput, { target: { value: 'Window seat if available' } });
+        expect(mockProps.setSpecialRequests).toHaveBeenCalledWith('Window seat if available');
     });
 
     test('Disables the submit button when guests are outside the 1-10 range', () => {

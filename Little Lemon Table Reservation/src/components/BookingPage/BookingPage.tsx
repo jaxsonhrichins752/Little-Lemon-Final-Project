@@ -8,8 +8,14 @@ import { useNavigate } from "react-router-dom";
 import BookingForm from "./BookingForm";
 import styles from "./BookingPage.module.css";
 import type { UpdateTimesAction } from "../../App";
+import bannerImage from "../../assets/restaurant 1.png";
 
 interface ReservationData {
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    specialRequests: string;
     date: string;
     time: string;
     guests: string;
@@ -23,6 +29,11 @@ interface BookingPageProps {
 }
 
 function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
+    const [phone, setPhone] = useState("");
+    const [email, setEmail] = useState("");
+    const [specialRequests, setSpecialRequests] = useState("");
     const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
     const [guests, setGuests] = useState("1");
     const [time, setTime] = useState("");
@@ -81,10 +92,23 @@ function BookingPage({ availableTimes, dispatch }: BookingPageProps) {
     return (
          <div className={styles.BookingPage}>
             <section className={styles.banner}>
-                <h1 className='display-title primary-yellow'>Reservations</h1>
+                <div className={styles.bannerText}>
+                    <h1 className='display-title primary-yellow'>Table Reservations</h1>
+                    <h2 className="subtitle light-highlight">Little Lemon Chicago</h2>
+                </div>
+                <img
+                    src={bannerImage}
+                    alt="Restaurant dining room"
+                    className={styles.bannerImage}
+                />
             </section>
             <section className={styles.BookingFormSection}>
                 <BookingForm
+                    firstName={firstName} setFirstName={setFirstName}
+                    lastName={lastName} setLastName={setLastName}
+                    phone={phone} setPhone={setPhone}
+                    email={email} setEmail={setEmail}
+                    specialRequests={specialRequests} setSpecialRequests={setSpecialRequests}
                     date={date} setDate={setDate}
                     time={validatedTime} setTime={setTime}
                     guests={guests} setGuests={setGuests}

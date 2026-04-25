@@ -58,7 +58,7 @@ describe('BookingPage', () => {
         const today = new Date().toISOString().slice(0, 10);
         localStorage.setItem(
             'Bookings',
-            JSON.stringify([{ date: today, time: '18:00', guests: '2', occasion: '' }])
+            JSON.stringify([{ firstName: 'Alex', lastName: 'Lee', phone: '5551112222', email: '', specialRequests: '', date: today, time: '18:00', guests: '2', occasion: '' }])
         );
 
         render(
@@ -82,10 +82,19 @@ describe('BookingPage', () => {
             </MemoryRouter>
         );
 
+        fireEvent.change(screen.getByLabelText(/First name/i), { target: { value: 'Jane' } });
+        fireEvent.change(screen.getByLabelText(/Last name/i), { target: { value: 'Doe' } });
+        fireEvent.change(screen.getByLabelText(/Phone number/i), { target: { value: '5551234567' } });
+        fireEvent.change(screen.getByLabelText(/Email/i), { target: { value: 'jane@example.com' } });
         fireEvent.change(screen.getByLabelText(/Choose time/i), { target: { value: '17:00' } });
         fireEvent.click(screen.getByRole('button', { name: /Make Your reservation/i }));
 
         expect(mockSubmitAPI).toHaveBeenCalledWith({
+            firstName: 'Jane',
+            lastName: 'Doe',
+            phone: '5551234567',
+            email: 'jane@example.com',
+            specialRequests: '',
             date: today,
             time: '17:00',
             guests: '1',
@@ -94,6 +103,11 @@ describe('BookingPage', () => {
 
         const storedBookings = JSON.parse(localStorage.getItem('Bookings') || '[]');
         expect(storedBookings).toContainEqual({
+            firstName: 'Jane',
+            lastName: 'Doe',
+            phone: '5551234567',
+            email: 'jane@example.com',
+            specialRequests: '',
             date: today,
             time: '17:00',
             guests: '1',
@@ -109,7 +123,7 @@ describe('BookingPage', () => {
         const today = new Date().toISOString().slice(0, 10);
         localStorage.setItem(
             'Bookings',
-            JSON.stringify([{ date: today, time: '17:00', guests: '2', occasion: '' }])
+            JSON.stringify([{ firstName: 'Alex', lastName: 'Lee', phone: '5551112222', email: '', specialRequests: '', date: today, time: '17:00', guests: '2', occasion: '' }])
         );
 
         render(

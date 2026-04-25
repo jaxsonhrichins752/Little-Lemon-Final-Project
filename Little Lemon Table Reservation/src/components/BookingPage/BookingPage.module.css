@@ -7,21 +7,38 @@
 }
 
 .banner {
-    /* Flexbox ensures content is centered for the mobile persona's quick glance */
+    /* Mobile: keep banner content simple and readable. */
     grid-row: 1;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: var(--primary-green);
     padding: 0 20px;
-    min-height: 100px; /* Reduced to allow the banner to be shorter on mobile */
+    min-height: 150px;
     width: 100%;
     box-sizing: border-box;
 }
 
+.bannerText {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .banner h1 {
     margin: 0;
-    text-align: center;
+    text-align: left;
+    line-height: 1;
+}
+
+.banner h2 {
+    margin: 0;
+    text-align: left;
+    line-height: 1;
+}
+
+.bannerImage {
+    display: none;
 }
 
 .BookingFormSection {
@@ -34,8 +51,16 @@
 /* DESKTOP (Large Screens) */
 @media (min-width: 769px) {
     .banner {
-        justify-content: center;
+        justify-content: space-between;
         padding: 0 10%;
-        min-height: 140px;
+        min-height: 220px;
+    }
+
+    .bannerImage {
+        display: block;
+        width: 300px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 12px;
     }
 }
