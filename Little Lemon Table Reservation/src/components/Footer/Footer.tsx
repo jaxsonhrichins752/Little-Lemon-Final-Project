@@ -21,7 +21,8 @@ function Footer() {
             <ul className={styles.linkList}>
               <li><HashLink smooth to="/#home" className="regular-paragraph light-highlight">Home</HashLink></li>
               <li><HashLink smooth to="/#about" className="regular-paragraph light-highlight">About</HashLink></li>
-              <li><HashLink smooth to="/#menu" className="regular-paragraph light-highlight">Menu</HashLink></li>
+              <li><Link to="/order" className="regular-paragraph light-highlight">Menu</Link></li>
+              <li><Link to="/order" className="regular-paragraph light-highlight">Order Online</Link></li>
               <li><Link to="/reservations" className="regular-paragraph light-highlight">Reservations</Link></li>
             </ul>
           </nav>

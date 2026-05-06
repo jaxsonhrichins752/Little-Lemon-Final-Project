@@ -1,10 +1,17 @@
 /**
- * Single dish tile: image, title, price, description, and a delivery CTA with bike icon.
+ * Single dish tile: image, title, price, description, and an add-to-cart CTA.
  */
 import styles from './DishCard.module.css';
-import bikeIcon from '../../assets/bikeicon.svg'; // Path to your delivery icon
 
-function DishCard({ image, title, price, description }) {
+export interface DishCardProps {
+  image: string;
+  title: string;
+  price: string;
+  description: string;
+  onAddToCart?: (item: { title: string; price: string }) => void;
+}
+
+function DishCard({ image, title, price, description, onAddToCart }: DishCardProps) {
   return (
     <article className={styles.card}>
       <div className={styles.imageContainer}>
@@ -16,9 +23,12 @@ function DishCard({ image, title, price, description }) {
           <span className="highlight-text color-primary-yellow">{price}</span>
         </div>
         <p className="regular-paragraph color-dark">{description}</p>
-        <button className={styles.deliveryButton}>
-          <span className="section-body color-dark">Order a delivery</span>
-          <img src={bikeIcon} alt="Delivery icon" />
+        <button
+          type="button"
+          className={styles.deliveryButton}
+          onClick={() => onAddToCart?.({ title, price })}
+        >
+          <span className="section-body color-dark">Add to cart</span>
         </button>
       </div>
     </article>

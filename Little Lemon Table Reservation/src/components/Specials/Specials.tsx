@@ -7,7 +7,7 @@ import DishCard from './DishCard';
 import bruchetta from '../../assets/bruchetta.png';
 import lemonDessert from '../../assets/lemonDessert.png';
 import greekSalad from '../../assets/greekSalad.png';
-import { HashLink } from 'react-router-hash-link';
+import { Link } from 'react-router-dom';
 
 
 // Dish content and images; swap entries here to change the specials row.
@@ -37,7 +37,7 @@ function Specials() {
     <section id="specials" className={styles.specialsSection}>
       <header className={styles.specialsHeader}>
         <h2 className="section-title color-dark">This weeks specials!</h2>
-        <HashLink smooth to="/#menu" className="button button-primary section-title pure-black">Online Menu</HashLink>
+        <Link to="/order" className="button button-primary section-title pure-black">Online Menu</Link>
       </header>
 
       <div className={styles.cardsGrid}>

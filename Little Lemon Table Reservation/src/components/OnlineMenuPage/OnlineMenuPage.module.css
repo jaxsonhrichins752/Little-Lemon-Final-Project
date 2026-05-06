@@ -1,0 +1,119 @@
+/* Online menu: banner (matches reservations), filter chips, specials-style card grid. */
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 20px;
+  padding-bottom: 48px;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--primary-green);
+  padding: 0 20px;
+  min-height: 150px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bannerText {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.banner h1 {
+  margin: 0;
+  text-align: left;
+  line-height: 1;
+}
+
+.banner h2 {
+  margin: 0;
+  text-align: left;
+  line-height: 1;
+}
+
+.bannerImage {
+  display: none;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.chip {
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 2px solid var(--primary-green);
+  background: var(--highlight-light);
+  color: var(--highlight-dark);
+  cursor: pointer;
+}
+
+.chip:hover {
+  background: rgba(73, 94, 87, 0.12);
+}
+
+.chipActive {
+  background: var(--primary-yellow);
+  border-color: var(--primary-yellow);
+  color: var(--highlight-dark);
+}
+
+.cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 32px 16px;
+  color: var(--highlight-dark);
+}
+
+@media (min-width: 769px) {
+  .banner {
+    justify-content: space-between;
+    padding: 0 10%;
+    min-height: 220px;
+  }
+
+  .bannerImage {
+    display: block;
+    width: 300px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .chipRow {
+    justify-content: flex-start;
+  }
+
+  .cardsGrid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 30px;
+  }
+}

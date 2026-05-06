@@ -1,6 +1,6 @@
 /**
  * Site header: logo, responsive nav (hamburger on small screens), and scroll-based hide/show.
- * Uses `HashLink` for in-page anchors on the home route and `Link` for `/reservations`.
+ * Uses `HashLink` for in-page anchors on the home route, `Link` for `/reservations` and `/order`.
  */
 import { useState, useEffect, useRef } from 'react'
 import logo from '../../assets/Logo.svg'
@@ -61,9 +61,9 @@ function Header() {
                     </HashLink>
                 </li>
                 <li>
-                    <HashLink smooth to="/#menu" onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/order" onClick={() => setIsMenuOpen(false)}>
                     Menu
-                    </HashLink>
+                    </Link>
                 </li>
                 <li>
                     <Link to="/reservations" onClick={() => setIsMenuOpen(false)}>
@@ -71,9 +71,9 @@ function Header() {
                     </Link>
                 </li>
                 <li>
-                    <HashLink smooth to="/#order-online" onClick={() => setIsMenuOpen(false)}>
+                    <Link to="/order" onClick={() => setIsMenuOpen(false)}>
                     Order Online
-                    </HashLink>
+                    </Link>
                 </li>
                 <li>
                     <HashLink smooth to="/#login" onClick={() => setIsMenuOpen(false)}>
